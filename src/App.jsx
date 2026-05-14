@@ -3,7 +3,7 @@ import NavBar from './components/NavBar'
 import Home from './pages/Home'
 import About from './pages/About'
 import Products from './pages/Products'
-import Wishes from './pages/Wishes'
+import Wishes from './pages/wishes'
 import Footer from './components/footer'
 import { ProductsProvider } from './context/productsContext'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
