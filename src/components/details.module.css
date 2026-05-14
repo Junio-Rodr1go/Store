@@ -1,0 +1,132 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.card {
+  background: #f7f7f5;
+  width: 100%;
+  max-width: 680px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.img {
+  width: 240px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 2rem 2rem 2rem 1.8rem;
+  flex: 1;
+}
+
+.close {
+  align-self: flex-end;
+  cursor: pointer;
+  transform: rotate(45deg);
+  color: #aaa;
+  transition: color 0.2s;
+}
+
+.close:hover { color: #1a1a1a; }
+
+.tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #5a7a5a;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.description {
+  font-size: 0.82rem;
+  color: #999;
+  line-height: 1.7;
+  flex: 1;
+}
+
+.price {
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.counter div {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e0e0dc;
+  cursor: pointer;
+  font-size: 1rem;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.counter div:hover { background: #e0e0dc; }
+
+.qtd {
+  font-size: 0.9rem;
+  min-width: 20px;
+  text-align: center;
+}
+
+.btn {
+  background: #1a1a1a;
+  color: #f7f7f5;
+  border: none;
+  padding: 0.8rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn:hover { opacity: 0.7; }
+
+@media (max-width: 600px) {
+  .card {
+    flex-direction: column;
+    max-width: 95vw;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .img {
+    width: 100%;
+    height: 220px;
+  }
+
+  .content {
+    padding: 1.2rem;
+  }
+}

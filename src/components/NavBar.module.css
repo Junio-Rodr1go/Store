@@ -1,0 +1,85 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 5rem;
+  background: #f7f7f5;
+  border-bottom: 1px solid #e0e0dc;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.cart {
+  margin-left: 100px;
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #1a1a1a;
+}
+
+.links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.numero {
+  position: relative;
+  bottom: 20px;
+  right: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #e05555;
+  color: #fff;
+  font-style: normal;
+  font-size: 0.65rem;
+  font-weight: 500;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+
+.links a {
+  font-size: 0.85rem;
+  color: #666;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+
+.hamburguer {
+  cursor: pointer;
+}
+
+.links a:hover { color: #1a1a1a; }
+
+.linksMobile {
+  padding: 20px;
+  position: absolute;
+  background-color: #f7f7f5;
+  top: 65px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+}
+
+.linksMobile a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #666;
+}
+
+.linksMobile a:hover {
+  color: #1a1a1a;
+}
