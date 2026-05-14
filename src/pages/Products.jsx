@@ -20,14 +20,17 @@ const products = [
   { id: 14, name: 'Vestido Haze', price: 229, description: 'Vestido longo em tom névoa azulada, decote sutil.', img: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400&q=80' },
   { id: 15, name: 'Jaqueta Thorn', price: 319, description: 'Jaqueta com textura espinhada, corte estruturado e moderno.', img: 'https://images.unsplash.com/photo-1548126032-079a0fb0099d?w=400&q=80' },
   { id: 16, name: 'Blusa Parch', price: 89, description: 'Blusa de seda sintética em tom pergaminho, caimento elegante.', img: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=400&q=80' },
-
 ];
 
 export default function Products() {
-
   const { wishes, setWishes } = useWishes()
   const [showDetail, setShowDetail] = useState(false)
   const [product, setProduct] = useState({})
+  const [search, setSearch] = useState('')
+
+  const filtered = products.filter(p =>
+    p.name.toLowerCase().includes(search.toLowerCase())
+  )
 
   return (
     <main className={styles.page}>
@@ -36,8 +39,23 @@ export default function Products() {
 
       <p className={styles.tag}>catálogo</p>
       <h1 className={styles.title}>todos os produtos</h1>
+
+      <div className={styles.searchWrapper}>
+        <input
+          type="text"
+          placeholder="buscar produto..."
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          className={styles.searchInput}
+        />
+      </div>
+
+      {filtered.length === 0 && (
+        <p className={styles.noResults}>nenhum produto encontrado.</p>
+      )}
+
       <div className={styles.grid}>
-        {products.map(p => (
+        {filtered.map(p => (
           <div key={p.id} className={styles.card}>
             <div onClick={() => { setProduct(p); setShowDetail(true) }} className={styles.imgWrapper}>
               <img src={p.img} alt={p.name} className={styles.img} />
